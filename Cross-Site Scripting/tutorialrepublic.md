@@ -1,12 +1,11 @@
 ## Title
 Reflected XSS - TutorialRepublic: Web Development Reference Search
-<!-- Write a short, clear title describing the vulnerability and where it was found. Example: Stored XSS in User Profile -->
 
 ## Description
 **Affected URL:** https://tutorialrepublic.pwnedbox.site/
 
 The search page does not properly handle user input received through the q parameter. This could allow an attacker to insert malicious script code into a crafted search URL, which may execute in the browser of anyone who visits the link. This issue could be used to affect users and compromise the security of their browsing session.
-<!-- Explain what the vulnerability is, where it exists, and why it is a security issue. Include the affected URL or endpoint. -->
+
 
 ## Steps to Reproduce
 
@@ -57,7 +56,7 @@ Screenshot 2 – Script alert executed and visible.
 
 
 
-3. Malicious scripts may perform unauthorized actions on behalf of users within the application.<!-- Explain what an attacker could achieve, who could be affected, and the realistic security consequences. -->
+3. Malicious scripts may perform unauthorized actions on behalf of users within the application.
 
 ## Remediation
 1. Validate and sanitize the Report Name field on the server side, and safely encode user input before displaying it.
@@ -72,4 +71,4 @@ Screenshot 2 – Script alert executed and visible.
 
 
 
-4. Deploy a Web Application Firewall (WAF), such as Cloudflare, as an additional layer of protection against common XSS attempts. Do not rely on WAF rules as a replacement for secure coding practices.<!-- Suggest specific steps to fix the vulnerability. Include secure coding practices or configuration changes where appropriate. -->
+4. Deploy a Web Application Firewall (WAF), such as Cloudflare, as an additional layer of protection against common XSS attempts. Do not rely on WAF rules as a replacement for secure coding practices.
