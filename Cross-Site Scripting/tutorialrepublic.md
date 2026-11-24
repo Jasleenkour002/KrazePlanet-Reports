@@ -7,7 +7,7 @@ Reflected XSS - TutorialRepublic: Web Development Reference Search
 The search page does not properly handle user input received through the q parameter. This could allow an attacker to insert malicious script code into a crafted search URL, which may execute in the browser of anyone who visits the link. This issue could be used to affect users and compromise the security of their browsing session.
 
 ## Steps to Reproduce
-1. Navigate to the search page using a URL.
+1. Navigate to the search page using a URL: https://tutorialrepublic.pwnedbox.site/.
 2. Wait for the search results page to finish loading.
 3. Check whether a JavaScript alert box appears automatically in the browser.
 4. Close the alert and return to the search results.
