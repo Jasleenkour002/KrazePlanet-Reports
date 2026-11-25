@@ -1,22 +1,19 @@
 ## Title
 Reflected XSS - Event Handler Filter
-<!-- Write a short, clear title describing the vulnerability and where it was found. Example: Stored XSS in User Profile -->
 
 ## Description
 **Affected URL:** https://tickets.pwnedbox.site/
-
 A Reflected Cross-Site Scripting (XSS) vulnerability was identified in the Tickets application through the `lname` GET parameter. During testing, a crafted event-handler payload was used, with string concatenation to construct the JavaScript function name. Inspection of the response showed that the `fname` parameter was HTML-encoded, while the `lname` value was inserted into the input element without proper encoding. The payload successfully executed JavaScript in the browser, confirming that the inconsistent output handling allows script injection through the `lname` parameter.
 
 ## Steps to Reproduce
 
-1. Visit the URL in a browser and wait for the Tickets page to load.
+1. Visit the URL in a browser:  https://tickets.pwnedbox.site/ and wait for the Tickets page to load.
 3. Check whether a JavaScript alert displaying `alert` appears.
 4. Inspect the HTML response and locate the reflected parameter values.
 5. Enter the URLencoded payload.
 6. Confirm that the `alert` appears and it proofs the successful execution of the payload.
 
 ## POC (Proof of Concept)
-
 Screenshot 1 – Entered the payload.
 
 <img width="1908" height="882" alt="16 Tickets 1" src="https://github.com/user-attachments/assets/e7d80b6f-0260-4847-92e9-79e7d36ddb81" />
