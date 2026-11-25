@@ -7,7 +7,7 @@ Reflected XSS - PubMed: National Library of Medicine Search Builder
 The search feature is affected by Reflected Cross-Site Scripting (XSS). The value provided through the `term` parameter is returned in the page content without sufficient encoding, which may allow browser-side script execution when a user visits a specially prepared URL. The issue can be observed when the submitted search value appears in the warning message and is interpreted as executable content instead of being treated as plain text.
 
 ## Steps to Reproduce
-1. Open the target website using a URL and enter the payload.
+1. Open the target website using a URL: https://pubmed.pwnedbox.site/.
 2. Wait for the page to finish loading and review any messages displayed.
 3. Check whether a JavaScript alert appears as a result of the submitted input.
 4. Confirm the injected JavaScript executes in the browser.
