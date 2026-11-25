@@ -8,7 +8,8 @@ The search feature has Reflected Cross-Site Scripting (XSS) due to unsafe handli
 
 ## Steps to Reproduce
 
-1. Access the search page through a URL.
+1. Access the search page through a URL:
+https://refseek.pwnedbox.site/.
 2. Wait for the response to load and check the browser's behavior.
 3. Note whether a JavaScript alert is triggered by the supplied input. Confirm the vulnerability if the script executes successfully
 
