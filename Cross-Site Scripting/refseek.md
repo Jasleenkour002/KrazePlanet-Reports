@@ -30,6 +30,5 @@ Screenshot 2 – JavaScript alert successfully executed.
 ## Remediation
 
 - Ensure that all search input is handled safely and encoded correctly before being displayed in the response page.
-- Do not depend only on blocking specific HTML tags or JavaScript functions, as attackers may use different techniques to bypass such restrictions.
 - In PHP, apply `htmlspecialchars()` with suitable flags and character encoding when outputting user-controlled values into HTML.
 - Consider deploying a Web Application Firewall (WAF), such as Cloudflare, to help detect and block common XSS attempts. Treat this as an additional security measure, not a substitute for fixing the underlying application code.
