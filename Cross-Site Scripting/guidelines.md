@@ -8,7 +8,8 @@ The search feature appears to be vulnerable to Reflected Cross-Site Scripting (X
 
 ## Steps to Reproduce
 
-1. Visit the target search page using a URL.
+1. Visit the target search page using a URL:
+https://guidelines.pwnedbox.site/.
 2. Submit the crafted URL and wait for the page to load.
 3. Check whether a Script alert appears in the browser.  
 
