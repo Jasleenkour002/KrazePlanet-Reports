@@ -1,15 +1,13 @@
 ## Title
 Reflected XSS - Shopify
-<!-- Write a short, clear title describing the vulnerability and where it was found. Example: Stored XSS in User Profile -->
 
 ## Description
 **Affected URL:** https://go.pwnedbox.site/
-
 The account confirmation page has a Reflected Cross-Site Scripting (XSS) vulnerability associated with the `returnTo` GET parameter. This parameter controls the destination of the **Cancel & return** link. Testing found that the supplied value was inserted into the link's `href` attribute without sufficient encoding, allowing crafted input to be interpreted by the browser and trigger JavaScript execution.
 
 ## Steps to Reproduce
-
-1. Review the input fields.
+1. Open the URL: https://go.pwnedbox.site/.
+2. Review the input fields.
 3. Send a request with a test XSS payload.
 4. Wait for the account confirmation page to load.
 5. Check whether a JavaScript confirmation dialog appears.
@@ -35,13 +33,11 @@ Screenshot 4 –  JavaScript confirmation dialog displaying `XSS` executes succe
 <img width="1918" height="894" alt="12 Go 4" src="https://github.com/user-attachments/assets/3c68eaf1-27a1-4fb5-89c3-516e5ffe3cae" />
 
 ## Impact
-
 - The flaw could expose sensitive information accessible through a user's browser session.
 - Depending on the application's security protections, exploitation may increase the risk of account compromise.
 - An attacker could potentially manipulate page behavior or trigger unintended actions in a victim's browser.
 
 ## Remediation
-
 - Validate the `returnTo` parameter and allow only approved destination URLs to prevent untrusted input from being inserted into the link.
 - Apply context-appropriate HTML attribute encoding when placing user-controlled values into the `href` attribute. Do not rely solely on blocking specific tags or JavaScript functions.
 - For PHP applications, use `htmlspecialchars()` with suitable flags and UTF-8 encoding when rendering values into HTML attributes.
