@@ -1,15 +1,12 @@
 ## Title
 Reflected XSS - Global Site Search Portal
-<!-- Write a short, clear title describing the vulnerability and where it was found. Example: Stored XSS in User Profile -->
 
 ## Description
 **Affected URL:** https://search.pwnedbox.site/
-
 The application exhibits a Reflected Cross-Site Scripting (XSS) issue in the `fname` and `lname` parameters. Values provided through these parameters are inserted into the First Name and Last Name fields without sufficient HTML attribute encoding. This may allow crafted input to be interpreted as executable script in a visitor's browser.
 
 ## Steps to Reproduce
-
-1. Access the application using a URL that includes test values in both the `fname` and `lname` parameters.
+1. Access the application using a URL: https://search.pwnedbox.site/.
 2. Wait for the page to process the supplied values and render the form.
 3. Check whether a JavaScript alert is triggered by either input.
 4. Close the alert dialog if it appears.
@@ -43,13 +40,11 @@ Screenshot 6 – Reflected payload visible in both HTML input fields in page sou
 <img width="1918" height="843" alt="6 Search 6" src="https://github.com/user-attachments/assets/0a116aa0-c639-47b8-ab5c-d7d3bb3e8400" />
 
 ## Impact
-
 - Malicious scripts may expose session-related data accessible through the victim's browser.
 - The issue could put user accounts at risk if an attacker is able to exploit the vulnerability further.
 - An attacker may trigger unauthorized operations through the affected user's browser.
 
 ## Remediation
-
 - Apply proper HTML attribute encoding to values inserted into the First Name and Last Name fields to ensure user input is displayed as text rather than interpreted as code.
 - Avoid relying on blacklisting specific HTML elements or JavaScript functions, as attackers may find alternative ways to bypass these filters.
 - If the application uses PHP, encode user-controlled values with `htmlspecialchars()` and appropriate flags before inserting them into HTML attributes.
