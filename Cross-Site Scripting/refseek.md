@@ -1,6 +1,5 @@
 ## Title
 Reflected XSS - RefSeek: Academic & Scientific Search Engine
-<!-- Write a short, clear title describing the vulnerability and where it was found. Example: Stored XSS in User Profile -->
 
 ## Description
 **Affected URL:** https://refseek.pwnedbox.site/
@@ -18,11 +17,9 @@ Screenshot 1 – XSS payload entered in the search box.
 
 <img width="1918" height="879" alt="3 Refseek 1" src="https://github.com/user-attachments/assets/74138df9-d806-4ee0-a7e9-af4404c3d6c3" />
 
-
 Screenshot 2 – JavaScript alert successfully executed.
 
 <img width="1918" height="886" alt="3 Refseek 2" src="https://github.com/user-attachments/assets/fbd2e580-171d-421d-b49d-f3163200efa1" />
-
 
 ## Impact
 
