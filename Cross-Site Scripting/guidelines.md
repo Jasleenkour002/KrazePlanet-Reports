@@ -3,6 +3,7 @@ Reflected XSS - GIGW: Government Website Guidelines Portal
 
 ## Description
 **Affected URL:** https://guidelines.pwnedbox.site/
+
 The search feature appears to be vulnerable to Reflected Cross-Site Scripting (XSS) because the value submitted through the s parameter is returned in the page response without being safely encoded. This may allow an attacker to craft a malicious link that executes JavaScript in the browser of a user who opens it. The issue was verified by observing a JavaScript alert triggered by the supplied input.
 
 ## Steps to Reproduce
