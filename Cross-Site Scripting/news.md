@@ -1,15 +1,12 @@
 ## Title
 Reflected XSS - HTML Tag Filter Bypass
-<!-- Write a short, clear title describing the vulnerability and where it was found. Example: Stored XSS in User Profile -->
 
 ## Description
 **Affected URL:** https://news.pwnedbox.site/
-
 A Reflected Cross-Site Scripting (XSS) vulnerability was identified in the News application through the `title` GET parameter. During testing, a specially crafted HTML payload was supplied to the parameter and successfully triggered a JavaScript confirmation dialog in the browser. The application does not properly handle the supplied input before including it in the HTML response, allowing the injected markup to alter the document structure and execute JavaScript. This indicates that the filtering and output-handling mechanisms are insufficient to prevent script injection.
 
 ## Steps to Reproduce
-
-1. Open the URL in browser.
+1. Open the URL in browser: https://news.pwnedbox.site/.
 2. Inspect the page's HTML source or server response.
 3. Run the x8 scan to find hidden parameters.
 4. Enter the URLencoded payload
