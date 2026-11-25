@@ -1,17 +1,13 @@
 ## Title
 Reflected XSS - Extended Function Filter
-<!-- Write a short, clear title describing the vulnerability and where it was found. Example: Stored XSS in User Profile -->
 
 ## Description
 **Affected URL:** https://account.pwnedbox.site/
-
 The application handles the `fname` and `lname` GET parameters differently when displaying user input. During testing, the `fname` value was properly HTML-encoded, but the `lname` value was returned directly inside its HTML input element without adequate encoding.
-
 The test payload included an obfuscated JavaScript event handler that constructs the `alert` function name using string concatenation. This indicates that the output handling for `lname` may allow HTML injection and could lead to reflected Cross-Site Scripting (XSS) if the payload executes in the browser.
 
 ## Steps to Reproduce
-
-1. Open the provided test URL in a browser within the authorized testing scope.
+1. Open the provided test URL in a browser within the authorized testing scope: https://account.pwnedbox.site/.
 2. Allow the page to load with the supplied `fname` and `lname` parameters.
 3. Inspect the page's HTML source or the server response.
 4. Find the locations where the `fname` and `lname` values are displayed.
