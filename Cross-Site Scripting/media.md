@@ -1,15 +1,12 @@
 ## Title
 Reflected XSS - Imgur Mobile
-<!-- Write a short, clear title describing the vulnerability and where it was found. Example: Stored XSS in User Profile -->
 
 ## Description
 **Affected URL:** https://media.pwnedbox.site/
-
 A Reflected Cross-Site Scripting (XSS) vulnerability was identified in the application through the `username` GET parameter. Testing showed that a crafted JavaScript payload supplied through this parameter was reflected in the page and executed in the browser. Further inspection revealed that the supplied username was inserted into the profile link's `href` attribute without proper HTML attribute encoding. This improper handling of user-controlled input allows injected content to be interpreted by the browser, confirming the XSS vulnerability.
 
 ## Steps to Reproduce
-
-1. Open the URL in browser and wait for the page to load with the crafted `username` value.
+1. Open the URL in browser and wait for the page to load with the crafted `username` value: https://media.pwnedbox.site/.
 2. Inspect the page source or HTML response and locate the profile link.
 3. Run `x8` scan to find hidden parameters.
 4. Entered the payload within the discovered parameter.
