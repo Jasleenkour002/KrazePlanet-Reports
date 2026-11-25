@@ -1,14 +1,11 @@
 ## Title
 Stored XSS - Shopify
-<!-- Write a short, clear title describing the vulnerability and where it was found. Example: Stored XSS in User Profile -->
 
 ## Description
 **Affected URL:** https://cms.pwnedbox.site/
-
 The Quill CMS application is vulnerable to Stored Cross-Site Scripting (XSS) through its article publishing feature. The editor allows HTML content to be added to an article, but the submitted content is stored and later rendered on the articles page using `innerHTML` without proper sanitization. During testing, a crafted HTML payload containing a JavaScript event handler was saved in an article and executed when the published article was viewed. This could affect other users who access the page containing the malicious content.
 
 ## Steps to Reproduce
-
 1. Log in to the CMS at `https://cms.pwnedbox.site/`.
 2. Open the **Write** section to create a new article.
 3. Enter the following test payload in the article title or HTML content field.
