@@ -1,15 +1,12 @@
 ## Title
 Reflected XSS - Case-Insensitive Filter Bypass
-<!-- Write a short, clear title describing the vulnerability and where it was found. Example: Stored XSS in User Profile -->
 
 ## Description
 **Affected URL:** https://directory.pwnedbox.site/
-
 The application has a Reflected Cross-Site Scripting (XSS) vulnerability involving the `fname` and `lname` GET parameters. The values submitted through these parameters are returned within the HTML input fields without adequate output encoding. During testing, a script tag with mixed capitalization was able to execute in the browser, showing that the application's existing input-handling controls do not adequately prevent script injection.
 
 ## Steps to Reproduce
-
-1. Open the target page using a URL containing test input in the `fname` and `lname` parameters.
+1. Open the target page using a URL: https://directory.pwnedbox.site/.
 2. Wait for the application to render the page using the supplied values.
 3. Check whether a JavaScript alert box appears.
 4. Review the HTML source or response returned by the application.
@@ -31,15 +28,12 @@ Screenshot 3 – JavaScript alert displaying `1` executes successfully.
 <img width="1918" height="846" alt="14 Directory 4" src="https://github.com/user-attachments/assets/ba792958-9bb0-427c-907c-fdf5b2c23f35" />
 <img width="1918" height="880" alt="14 Directory 5" src="https://github.com/user-attachments/assets/2bea8df1-3d6b-417d-8431-620e9502ad8e" />
 
-
 ## Impact
-
 - The vulnerability may expose session-related information if browser security protections are insufficient.
 - Successful exploitation could put user accounts at risk of unauthorized access.
 - Malicious scripts may allow an attacker to trigger unwanted actions through a victim's browser.
 
 ## Remediation
-
 - Apply proper HTML attribute encoding to the `fname` and `lname` values before displaying them in the corresponding input fields.
 - Do not rely on blocking specific HTML tags or JavaScript functions, as mixed-case tags and alternative payloads may bypass these restrictions.
 - If the application uses PHP, encode user-controlled values with `htmlspecialchars()` using appropriate flags and UTF-8 encoding before rendering them in HTML.
