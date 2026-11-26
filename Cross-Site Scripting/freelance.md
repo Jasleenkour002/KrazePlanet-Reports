@@ -3,10 +3,10 @@ Blind XSS - Freelance Full-Stack Developer
 
 ## Description
 **Affected URL:** https://freelance.pwnedbox.site/
+
 A Blind Cross-Site Scripting (XSS) vulnerability was identified in the project inquiry form. User-provided data entered in fields such as **Full Name**, **Phone**, and **Message** is saved and later displayed in the administrative inquiry panel without proper output encoding. A specially crafted payload can execute JavaScript when an administrator opens the submitted inquiry. Since the execution takes place in a separate user's browser, the issue is classified as Blind XSS. The execution can be verified through an external XSS callback service.
 
 ## Steps to Reproduce
-
 1. Open the affected website: https://freelance.pwnedbox.site/ and navigate to the **Contact** section.
 2. Enter an XSS test payload in the **Full Name**, **Phone**, or **Message** field. The payload used during testing was:
 3. Fill in the remaining required fields with valid test data and submit the inquiry.
