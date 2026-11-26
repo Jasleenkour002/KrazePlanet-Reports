@@ -7,7 +7,7 @@ A Blind Cross-Site Scripting (XSS) vulnerability was identified in the project i
 
 ## Steps to Reproduce
 
-1. Open the affected website and navigate to the **Contact** section.
+1. Open the affected website: https://freelance.pwnedbox.site/ and navigate to the **Contact** section.
 2. Enter an XSS test payload in the **Full Name**, **Phone**, or **Message** field. The payload used during testing was:
 3. Fill in the remaining required fields with valid test data and submit the inquiry.
 4. Verify that the website displays a successful submission message.
